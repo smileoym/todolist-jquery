@@ -1,7 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <title>Todolist</title>
+  <script>
+  $.ajax({
+    // http may be used instead of https if required
+    url: "https://sheetsu.com/apis/6b1effc8",
+    crossDomain : true,
+  })
+  .done(function(data) {
+    if (data.length == 0) {
+      console.log("No results found");
+      return;
+    }
+    $.each(data, function(key, value) {
+       console.log(value);
+
+       console.log(key);
+    });
+  })
+  .fail(function() {
+    console.log("Failed");
+  });
+  </script>
 </head>
 <body>
   <p>First Task<p>
