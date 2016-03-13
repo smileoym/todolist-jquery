@@ -16,8 +16,8 @@
     }
     $.each(data.result, function(key, value) {
        console.log(value);
-
-       
+       var projectElement = '<h1>'+value.Description + '<\/h1>'
+       console.log(projectElement)    
     });
   })
   .fail(function() {
@@ -26,8 +26,6 @@
   </script>
 </head>
 <body>
-  <p>First Task<p>
-  <p>First Task<p>
-  <p>First Task<p>
-</body>
+  <div id='projects-holder'>  </div>
+  </body>
 </html>
