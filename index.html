@@ -17,7 +17,11 @@
     $.each(data.result, function(key, value) {
        console.log(value);
        var projectElement = '<h1>'+value.Description + '<\/h1>'
-       console.log(projectElement)    
+       console.log(projectElement)
+       var projectParrent = '<div id="project-'+value.ID +'">'+projectElement+'<\/div>'  
+       console.log(projectParrent);   
+       var previousContent = $('#projects-holder').html();
+       $('#projects-holder').html(previousContent+projectParrent);
     });
   })
   .fail(function() {
